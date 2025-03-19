@@ -1,0 +1,9 @@
+{
+	"resources" : {
+		"kf" : {
+			"name" : "Financial capital",
+			"short" : "F",
+			"base_value" : 1000
+		}
+	}
+}
