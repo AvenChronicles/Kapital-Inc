@@ -6,4 +6,5 @@ extends Control
 
 func _ready() -> void:
 	rich_text.text = "Coucou"
-	rich_text.text = JSON.stringify( HandlerConfig.ref.load_config() )
+	rich_text.text = JSON.stringify( HandlerConfig.ref.config() )
+	rich_text.text += "\n%s" %HandlerConfig.ref.config()["resources"]["kf"]["name"]

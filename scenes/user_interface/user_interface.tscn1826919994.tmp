@@ -1,0 +1,130 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0wx2g8iutex5"]
+
+[ext_resource type="Script" uid="uid://dlqbr4oq106xn" path="res://scenes/user_interface/user_interface.gd" id="1_yqwyh"]
+
+[node name="UserInterface" type="Control" node_paths=PackedStringArray("menu_language")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqwyh")
+menu_language = NodePath("VBoxContainer/Resources/HBoxContainer/Control2/MarginContainer/MenuLanguage/LANGUAGE")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resources" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Resources"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/Resources/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Resources/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Resources/HBoxContainer/CenterContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Resources/HBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="VBoxContainer/Resources/HBoxContainer/CenterContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "FINANCIAL_KAPITAL"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/Resources/HBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="VBoxContainer/Resources/HBoxContainer/CenterContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "SOCIAL_KAPITAL"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/Resources/HBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="VBoxContainer/Resources/HBoxContainer/CenterContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+text = "CULTURAL_KAPITAL"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/Resources/HBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="VBoxContainer/Resources/HBoxContainer/CenterContainer/HBoxContainer/MarginContainer4"]
+layout_mode = 2
+text = "SYMBOLIC_KAPITAL"
+
+[node name="Control2" type="Control" parent="VBoxContainer/Resources/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Resources/HBoxContainer/Control2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -95.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MenuLanguage" type="MenuBar" parent="VBoxContainer/Resources/HBoxContainer/Control2/MarginContainer"]
+layout_mode = 2
+
+[node name="LANGUAGE" type="PopupMenu" parent="VBoxContainer/Resources/HBoxContainer/Control2/MarginContainer/MenuLanguage"]
+item_count = 2
+item_0/text = "EN"
+item_0/checked = true
+item_0/id = 0
+item_1/text = "FR"
+item_1/id = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Main" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="id_pressed" from="VBoxContainer/Resources/HBoxContainer/Control2/MarginContainer/MenuLanguage/LANGUAGE" to="." method="_on_language_id_pressed"]
